@@ -1,0 +1,3 @@
+../Core/Src/SPIGpio.cpp:12:1:SPIGpio::SPIGpio(SPI_HandleTypeDef)	1
+../Core/Src/SPIGpio.cpp:18:6:void SPIGpio::Transmit()	1
+../Core/Src/SPIGpio.cpp:27:6:void SPIGpio::Transmit_Motor2()	1

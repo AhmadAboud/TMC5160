@@ -1,0 +1,5 @@
+../Core/Src/GpioPin.cpp:12:1:GpioPin::GpioPin(uint16_t, GPIO_TypeDef*)	1
+../Core/Src/GpioPin.cpp:19:6:bool GpioPin::Read()	1
+../Core/Src/GpioPin.cpp:24:6:void GpioPin::Set()	1
+../Core/Src/GpioPin.cpp:29:6:void GpioPin::Clear()	1
+../Core/Src/GpioPin.cpp:34:6:void GpioPin::Toggle()	1

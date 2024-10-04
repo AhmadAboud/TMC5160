@@ -1,0 +1,4 @@
+../Core/Src/EventLoop.cpp:15:7:void EventCreateCpp()	1
+../Core/Src/EventLoop.cpp:22:6:void EventLoopCpp()	1
+../Core/Src/EventLoop.cpp:34:7:void EventCreateC()	1
+../Core/Src/EventLoop.cpp:39:7:void EventLoopC()	1

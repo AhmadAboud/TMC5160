@@ -1,0 +1,62 @@
+for(int i=50; i>25;i--)
+  {
+
+  __HAL_TIM_SET_AUTORELOAD (&htim17,2*i-20); // 31khz
+  __HAL_TIM_SET_PRESCALER (&htim17,70);
+  __HAL_TIM_SET_COMPARE (&htim17,TIM_CHANNEL_1,50);
+   HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+
+	HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_RESET);
+	HAL_SPI_TransmitReceive(&hspi1, pDataSend2, pDataRecv2, 5, 1000);
+	HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_SET);
+
+   HAL_Delay(500);
+   HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
+   HAL_Delay(500);
+   /*HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_RESET);
+   HAL_SPI_TransmitReceive(&hspi1, pDataSend3, pDataRecv3, 5, 1000);
+   HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_SET);
+   HAL_Delay(23);*/
+  }
+ 
+  
+  // Beste Rampe ist :
+  
+  Y = ⁅70+700(sin(1/100 𝑥−𝜋/2))^10⁆      // Overload
+  
+  
+  double m_dSollSpeedDriveHZ= 700;
+	double m_dCycle=1;
+	double m_dRampTimeMS =100;
+	double m_dCurrentlySpeedDriveHz=0;
+	int m_bStart = 0, m_bReverseRun = 0;
+  HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(V24Vor_GPIO_Port, V24Vor_Pin, GPIO_PIN_SET);
+   
+    
+  
+  
+   for(int i=1; i<330;i+=60)
+		  {
+			  m_dCurrentlySpeedDriveHz = 10+round(calcFrequency(i, m_dRampTimeMS,m_dSollSpeedDriveHZ));
+			__HAL_TIM_SET_AUTORELOAD (&htim17, 60 + m_dCurrentlySpeedDriveHz); // 31khz
+			__HAL_TIM_SET_PRESCALER (&htim17,5);
+			__HAL_TIM_SET_COMPARE (&htim17,TIM_CHANNEL_1,50);
+			HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
+
+			HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_RESET);
+			HAL_SPI_TransmitReceive(&hspi1, pDataSend2, pDataRecv2, 5, 1000);
+			HAL_GPIO_WritePin(csSM40_GPIO_Port, csSM40_Pin,GPIO_PIN_SET);
+			HAL_Delay(80);
+		  }
+		  
+
+
+ double calcFrequency(double m_dCycle, double m_dRampTimeMS,double m_dSollSpeedDriveHZ )
+{
+	double PI =3.14159999999478589672;
+	double m_dCurrentlySpeedDriveHz;
+    m_dCurrentlySpeedDriveHz = m_dSollSpeedDriveHZ*pow(sin(m_dCycle*(1/m_dRampTimeMS)-PI/2),10);
+ 	return m_dCurrentlySpeedDriveHz;
+}
+  

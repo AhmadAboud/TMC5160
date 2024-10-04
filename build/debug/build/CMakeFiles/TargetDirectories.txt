@@ -1,0 +1,3 @@
+C:/Users/ahmad.alaboud/STM32CubeIDE/workspace_1.12.1/TMC5160_H725/build/debug/build/CMakeFiles/edit_cache.dir
+C:/Users/ahmad.alaboud/STM32CubeIDE/workspace_1.12.1/TMC5160_H725/build/debug/build/CMakeFiles/TMC5160_H725.dir
+C:/Users/ahmad.alaboud/STM32CubeIDE/workspace_1.12.1/TMC5160_H725/build/debug/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+../Core/Src/inputsCat9555.cpp:12:1:inputsCat9555::inputsCat9555(I2C_HandleTypeDef)	16	static
+../Core/Src/inputsCat9555.cpp:18:10:uint16_t inputsCat9555::mem_read_reg(uint8_t)	40	static

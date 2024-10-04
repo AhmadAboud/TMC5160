@@ -1,0 +1,4 @@
+../Core/Src/EventLoop.cpp:15:7:void EventCreateCpp()	16	static
+../Core/Src/EventLoop.cpp:22:6:void EventLoopCpp()	4	static
+../Core/Src/EventLoop.cpp:34:7:void EventCreateC()	8	static
+../Core/Src/EventLoop.cpp:39:7:void EventLoopC()	8	static

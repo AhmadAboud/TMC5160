@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TMC5160_H725",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TMC5160_H725::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TMC5160_H725-Debug-229ad749d0a61d75aa49.json",
+					"name" : "TMC5160_H725",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/ahmad.alaboud/STM32CubeIDE/workspace_1.12.1/TMC5160_H725/build/debug/build",
+		"source" : "C:/Users/ahmad.alaboud/STM32CubeIDE/workspace_1.12.1/TMC5160_H725"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
